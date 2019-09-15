@@ -1,11 +1,22 @@
 package parkSystem;
 
 public class Queue<T> {
-	private int maxSize;
-	private T[] data ;
-	private int front ;
-	private int rear;
+	 int maxSize;
+	 T[] data ;
+	 int front ;
+	 int rear;
 	
+	 
+	 
+	 
+	Queue() {
+		super();
+		this.maxSize = 100;
+		this.data = (T[])new Object[100];
+		this.front = 0;
+		this.rear = 0;
+	}
+
 	Queue(int initialisation){
 		if (initialisation>=0) {
 			this.maxSize=initialisation;
@@ -57,6 +68,13 @@ public class Queue<T> {
 			return temp;
 		}
 		
+		
+	}// pump out the head item
+	
+	public T peak() {
+		
+		if (this.isEmpty()!=true) {return this.data[front];}
+		else {return null;}
 		
 	}
 	

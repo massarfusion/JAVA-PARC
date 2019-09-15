@@ -1,9 +1,9 @@
 package parkSystem;
 
 public class Stack <T> {
-	private int maxSize;
-	private T[] data ;
-	private int top ;
+	 int maxSize;
+	 T[] data ;
+	 int top ;
 	
 	Stack(){
 		
@@ -45,6 +45,12 @@ public class Stack <T> {
 		return true;
 	}// push in a new value
 	
+	public T[] getData() {
+		return data;
+	}
+
+	
+
 	public T pop() {
 		if (top==-1) {return null;}
 		else {;}
@@ -55,7 +61,13 @@ public class Stack <T> {
 		
 	}// pop off the item on the top
 	
-	
+	public T peak() {
+		
+		if (this.isEmpty()!=true) {
+			return this.data[top];
+		}
+		else {return null;}
+	}
 	
 	
 }
