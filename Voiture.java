@@ -7,7 +7,7 @@ public class Voiture {
 	Voiture(String chepai){
 		this.plate=chepai;
 		endTime=0;
-		startTime=System.currentTimeMillis();
+		startTime=0;
 	}
 	public String getPlate() {
 		return plate;
@@ -20,6 +20,9 @@ public class Voiture {
 	}
 	
 	
+	public void setStartTime(double startTime) {
+		this.startTime = startTime;
+	}
 	public boolean equal (String another) {
 		if ((this.plate).equals(another)){return true;}
 		

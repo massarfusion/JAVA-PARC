@@ -65,6 +65,7 @@ public class Parc extends Stack {
 		if (this.isFull()==true) {return false;}
 		else {;}
 		this.push(car);
+		car.setStartTime(System.currentTimeMillis());
 		
 		return true;
 	}//park-in a automobile
@@ -74,6 +75,8 @@ public class Parc extends Stack {
 		temp=(Voiture)this.pop();
 		double currentTime=System.currentTimeMillis();
 		double period=(currentTime-temp.startTime)/1000;
+		temp.setStartTime(0.0);
+		System.out.println(period);
 		return temp;
 		
 		
@@ -135,6 +138,31 @@ public class Parc extends Stack {
 		return account;
 	}
 	
-	
-	
+	public int search(String chepai) {
+		Stack  <Voiture> tempo=new Stack<Voiture>(this.maxSize);
+		int totalNumber=0;
+		if (this.isEmpty()) {return -1;}
+		else {;}
+		while (this.isEmpty()!=true) {
+			Voiture tmp=this.leadOut();
+			tempo.push(tmp);
+			//////////////////////
+			if (tmp.equal(chepai)){
+				while (tempo.isEmpty()!=true) {
+					
+					this.push(tempo.pop());
+					
+				}
+				return totalNumber;
+			}
+			else {
+				totalNumber++;
+				
+				
+			}
+		}
+		
+		return -2;
+	}
+	//////////-1 means empty park, -2 means no match , others indicates the number of cars parked in front of itself//////
 }
