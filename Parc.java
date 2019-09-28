@@ -65,7 +65,7 @@ public class Parc extends Stack {
 		if (this.isFull()==true) {return false;}
 		else {;}
 		this.push(car);
-		car.setStartTime(System.currentTimeMillis());
+//		car.setStartTime(System.currentTimeMillis());
 		
 		return true;
 	}//park-in a automobile
@@ -73,10 +73,15 @@ public class Parc extends Stack {
 		
 		Voiture temp = null;
 		temp=(Voiture)this.pop();
-		double currentTime=System.currentTimeMillis();
-		double period=(currentTime-temp.startTime)/1000;
-		temp.setStartTime(0.0);
-		System.out.println(period);
+//		double currentTime=System.currentTimeMillis();
+//		double period=(currentTime-temp.startTime)/1000;
+//		temp.setStartTime(0.0);
+//		System.out.println(period);
+		/*
+		 * temporarily banned
+		 * 
+		 * 
+		 */
 		return temp;
 		
 		

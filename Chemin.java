@@ -29,9 +29,20 @@ public class Chemin extends Queue {
 		
 	}
 	//////////////////DRIVE OUT/////////////////////////////
+	/*
+	 * 
+	 * WARNIGN:SEVERE LEAK  MUST BE FIXED
+	 * 
+	 * 
+	 * 
+	 */
+	
+	
+	
+	
 	public Voiture driveOut(String chepai ) {
 		Stack  <Voiture> tempo=new Stack<Voiture>(this.maxSize);
-		if (this.isEmpty()) {return new Voiture ("empty");}
+		if (this.isEmpty()) {return new Voiture ("empty chemin");}
 		else {;}
 		while (this.isEmpty()!=true) {
 			if (this.peak().equals(chepai)) {
@@ -62,22 +73,36 @@ public class Chemin extends Queue {
 		return new Voiture ("nomatch");
 		
 	}
+	
+	/*
+	 * 
+	 * WARNIGN:SEVERE LEAK  MUST BE FIXED
+	 * 
+	 * 
+	 * 
+	 */
+	
+	
+	
+	
+	
+	
 	///////////////////NOT IN USE NOW//////////////////////////
 	
 	public int count(){
-		Stack  <Voiture> tempo=new Stack<Voiture>(this.maxSize);
+		Queue  <Voiture> tempo=new Queue<Voiture>(this.maxSize);
 		int counter=0;
 		if (this.isEmpty()) {return 0;}
 		else {;}
 		while(this.isEmpty()!=true) {
 			
-			tempo.push(this.driveOut());
+			tempo.enQueue(this.driveOut());
 			counter++;
 			
 		}
 		while (tempo.isEmpty()!=true) {
 			
-			this.enQueue(tempo.pop());
+			this.enQueue(tempo.deQueue());
 			
 		}
 		
